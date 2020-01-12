@@ -5,13 +5,25 @@
 </template>
 
 <script>
-import Main from './components/main.vue'
-
 
 export default {
   name: 'app',
+
+  data() {
+    return {
+      posts: []
+    }
+  },
+
+  async mounted() {
+    const res = await fetch(
+      'https://jsonplaceholder.typicode.com/users'
+      );
+    const posts = await res.json();
+    this.posts = posts;
+  }
  
-}
+};
 </script>
 
 <style>
