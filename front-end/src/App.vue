@@ -1,5 +1,12 @@
 <template>
   <div id="app">
+    <select v-model='selected'>
+      <option disabled value="">Выберите один из вариантов</option>
+      <option v-for="post in posts" :key="post.id" value="d">{{post.id[1]}} {{post.name}}</option>
+      <!-- v-on:click="" -->
+      <button ></button>
+    </select>
+    <template v-if="selected == ''">
     <div v-for="post in posts" :key="post.id" class="post">
       <div class="info">
       {{post.id}}
@@ -33,6 +40,7 @@
       </ul>
       </div>
     </div>
+    </template>
   </div>
 </template>
 
@@ -43,19 +51,28 @@ export default {
 
   data() {
     return {
-      posts: []
+      posts: [],
+      userFilter: this.posts,
+      selected: ''
     }
   },
+  
+ 
 
+  // получаю данные
   async mounted() {
+
     const res = await fetch(
       'https://jsonplaceholder.typicode.com/users'
       );
+
     const posts = await res.json();
     this.posts = posts;
+    
   }
  
 };
+
 </script>
 
 <style>
