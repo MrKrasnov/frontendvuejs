@@ -1,10 +1,22 @@
 <template>
   <div id="app">
+
+    <select v-model="selected">
+      <option disabled value="">Выберите один из вариантов</option> 
+
+      <option v-for="post in posts" :key="post.id">
+        {{post.id}} {{post.name}}
+        </option>
+    </select>
+    
+
     <list v-for="post in posts"
           :key="post.id"
           :post="post"
       ></list>
+      
   </div>
+
 </template>
 
 <script>
@@ -19,7 +31,8 @@ export default {
   data() {
     return {
       posts: [],
-      userFilter: this.posts
+      userFilter: this.posts,
+      selected: ''
     }
   },
   
