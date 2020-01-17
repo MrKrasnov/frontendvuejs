@@ -1,12 +1,15 @@
 <template>
-    <h1>{{name}}</h1>
+<h1>{{name}}</h1>
 </template>
+     
+    
 
 <script>
     export default {
+        props: ['name'],
         data: function () {
             return {
-            name: "hello"
+            selected: ''
             }
         },
     }
