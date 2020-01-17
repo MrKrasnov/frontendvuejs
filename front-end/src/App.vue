@@ -3,18 +3,26 @@
 
     <select v-model="selected">
       <option disabled value="">Выберите один из вариантов</option> 
-
-      <option v-for="post in posts" :key="post.id">
-        {{post.id}} {{post.name}}
+      
+        <option v-for="post in posts" :key="post.id">
+          {{post.id}}. {{post.name}}
         </option>
+        
     </select>
-    
-
-    <list v-for="post in posts"
+    {{selected}}
+      <template v-if="selected == ''">
+        <list v-for="post in posts"
           :key="post.id"
           :post="post"
-      ></list>
-      
+        ></list>
+      </template>
+      <template v-else>
+        <list v-for="post in posts"
+          :key="post.id"
+          :post="post"
+        ></list>
+      </template>
+
   </div>
 
 </template>
