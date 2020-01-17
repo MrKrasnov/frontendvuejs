@@ -2,8 +2,7 @@
   <div id="app">
     <list v-for="post in posts"
           :key="post.id"
-          :name="post.name"
-          :username="post.username"
+          :post="post"
       ></list>
   </div>
 </template>
@@ -53,24 +52,5 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-}
-.post li p {
-  border: none;
-}
-p{
-  margin: 0;
-}
-.post{
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  color:#2c3e50;
-  font-size: 15px;
-}
-.info{
-  padding-left: 20px;
-}
-ul{
-  margin: 0;
 }
 </style>
