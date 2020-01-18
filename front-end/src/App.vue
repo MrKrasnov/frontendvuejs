@@ -5,23 +5,16 @@
       <option disabled value="">Выберите один из вариантов</option> 
       
         <option v-for="post in posts" :key="post.id">
-          {{post.id}}. {{post.name}}
+          {{post.name}}
         </option>
         
     </select>
-    {{selected}}
-      <template v-if="selected == ''">
-        <list v-for="post in posts"
+      
+        <list v-for="post in filterList"
           :key="post.id"
           :post="post"
         ></list>
-      </template>
-      <template v-else>
-        <list v-for="post in posts"
-          :key="post.id"
-          :post="post"
-        ></list>
-      </template>
+      
 
   </div>
 
@@ -40,11 +33,21 @@ export default {
     return {
       posts: [],
       userFilter: this.posts,
-      selected: ''
+      selected: '',
+      
     }
   },
   
- 
+  //фильтр
+  computed: {
+    filterList: function (){
+      let sel = this.selected;
+      return this.posts.filter(function (elem) {
+        if(sel === '') return true;
+        else return elem.name.indexOf(sel) > -1;
+      }) 
+    }
+  },
 
   // получаю данные
   created: function () {
