@@ -1,9 +1,10 @@
 <template>
- <h1>{{message}}</h1>
+ <h1>{{postes}}</h1>
 </template>
 
 <script>
     export default {
+        props: ['postes'],
         name: 'listchart',
         data: function () {
             return {

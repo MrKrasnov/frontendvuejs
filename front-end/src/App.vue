@@ -15,8 +15,9 @@
           :post="post"
         ></list>
       
-    <listchart>
-      
+    <listchart v-for="postes in postchart" 
+              :key="postes.id"
+              :postes="postes">
     </listchart>
   </div>
 
