@@ -15,26 +15,32 @@
           :post="post"
         ></list>
       
-
+    <listchart>
+      
+    </listchart>
   </div>
 
 </template>
 
 <script>
 import List from './List.vue'
+import Listchart from './Listchart.vue'
+import {Pie} from 'vue-chartjs'
 
 export default {
   components: {
-    List
+    List,
+    Listchart,
   },
   name: 'app',
+  extengs: Pie,
 
   data() {
     return {
       posts: [],
       userFilter: this.posts,
       selected: '',
-      
+      postchart: [],
     }
   },
   
@@ -60,6 +66,14 @@ export default {
       })
       .then(function (data) {
         vm.posts = data
+      }),
+
+      fetch('https://jsonplaceholder.typicode.com/users/1/posts')
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        vm.postchart = data
       })
   },
 
