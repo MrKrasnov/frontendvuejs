@@ -16,7 +16,7 @@
         data (){
             return {
                 postchart: [],
-                labels: ['apple' , 'banana', 'Grapes'],
+                labels: this.lab,
                 datasets: [{
                     data: [20, 30, 50 ],
                 }],
@@ -39,17 +39,20 @@
             .then(function (data) {
               vm.postchart = data
       })
+    },
+
+    computed: {
+        lab: function () {
+            let obj = [];
+            for(let userI in this.postchart.userId){
+                obj.push(userI)
+            }
+            return obj;
         }
     }
-
-
-    // fetch('https://jsonplaceholder.typicode.com/users/1/posts')
-    //   .then(function (response) {
-    //     return response.json()
-    //   })
-    //   .then(function (data) {
-    //     vm.postchart = data
-    //   })
+        
+    }
+    
 </script>
 
 <style>
