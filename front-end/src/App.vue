@@ -26,7 +26,7 @@
 <script>
 import List from './List.vue'
 import Listchart from './Listchart.vue'
-import {Pie} from 'vue-chartjs'
+
 
 export default {
   components: {
@@ -34,7 +34,6 @@ export default {
     Listchart,
   },
   name: 'app',
-  extengs: Pie,
 
   data() {
     return {
