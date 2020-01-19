@@ -10,15 +10,15 @@
     
     export default {
         
-        props: ['postes'],
+        
         name: 'listchart',
 
         data (){
             return {
+                postchart: [],
                 labels: ['apple' , 'banana', 'Grapes'],
                 datasets: [{
                     data: [20, 30, 50 ],
-                    backgroundColor: ['Red', 'Yellow', 'Purple']
                 }],
                 option: {
                     title: {
@@ -29,8 +29,27 @@
                 }
 
             };
+        },
+        created: function () {
+            let vm = this;
+             fetch('https://jsonplaceholder.typicode.com/users/1/posts')
+             .then(function (response) {
+             return response.json()
+             })
+            .then(function (data) {
+              vm.postchart = data
+      })
         }
     }
+
+
+    // fetch('https://jsonplaceholder.typicode.com/users/1/posts')
+    //   .then(function (response) {
+    //     return response.json()
+    //   })
+    //   .then(function (data) {
+    //     vm.postchart = data
+    //   })
 </script>
 
 <style>

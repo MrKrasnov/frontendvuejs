@@ -15,9 +15,7 @@
           :post="post"
         ></list>
       
-    <listchart v-for="postes in postchart" 
-              :key="postes.id"
-              :postes="postes">
+    <listchart>
     </listchart>
   </div>
 
@@ -40,7 +38,7 @@ export default {
       posts: [],
       userFilter: this.posts,
       selected: '',
-      postchart: [],
+      
     }
   },
   
@@ -66,15 +64,8 @@ export default {
       })
       .then(function (data) {
         vm.posts = data
-      }),
+      })
 
-      fetch('https://jsonplaceholder.typicode.com/users/1/posts')
-      .then(function (response) {
-        return response.json()
-      })
-      .then(function (data) {
-        vm.postchart = data
-      })
   },
 
 }
