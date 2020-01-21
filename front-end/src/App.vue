@@ -17,6 +17,7 @@
       
     <listchart>
     </listchart>
+    
   </div>
 
 </template>
