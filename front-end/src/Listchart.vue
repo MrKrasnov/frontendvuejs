@@ -18,9 +18,10 @@
         data (){ 
             return {
                 postchart: [],
-                
+                // labels:
                 datasets: [{
-                    data: [20, 30, 50 ],
+                    backgroundColor: '#f87979',
+                    data: [10, 10, 10 , 10, 10, 10 , 10, 10, 10, 10],
                 }],
                 option: {
                     title: {
@@ -33,9 +34,33 @@
             };
         },
         computed: {
-            labels: function() { 
-                
-              return [this.postchart[1].userId, this.postchart[2].userId, this.postchart[3].userId];
+            labels: function() {
+                 
+               let array1 = [];
+            //    let f = this.postchart[1].userId;
+               for (let index = 0; index < 100; index++) {
+                   array1.push([this.postchart[index].userId,this.postchart[index].title]);
+               }
+               
+                // let array1 = [{name:1},{name:2}];
+                // let array = [];
+                 
+                 for (let ik = 0; ik < array1.length; ik++) {
+                    let name_unique = array1[ik][0];
+                    for (let j = 0; j <array1.length; j++) {
+                        let name_not_unique =array1[j][0];
+                    if(ik != j  && name_unique == name_not_unique){
+                        array1.splice(ik, 1);
+                        ik-=1;
+                        break;
+                    }
+                }
+            }
+            let obj = [];
+            for (var i = 0; i < array1.length; i++) {
+                obj.push(array1[i][0]);
+            }
+            return obj;
             }
         },
         created: function () {
