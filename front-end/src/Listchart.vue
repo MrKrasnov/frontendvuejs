@@ -134,8 +134,24 @@
                             break;
                     }
                 }
+                const reducer = (accumulator, currentValue) => accumulator + currentValue;
+                // один процент от общей суммы
+                let OneInterest = data.reduce(reducer) / 100 * 1;
+                //сохраняем проценты
+                let resultInterest = [];
                 
-                result[0].data = data;
+                for(let post of data){
+                    // итерируем пока не получит цифру поста
+                    let Interest = 0;
+                    let WhileRes = 0
+                    while(WhileRes != post){
+                        Interest += 1;
+                        // правильно добавляем дробные числа
+                        WhileRes = (WhileRes * 10 + OneInterest * 10) / 10;
+                    }
+                    resultInterest.push(Interest);
+                }
+                result[0].data = resultInterest;
                 return result;            
             }
         },
