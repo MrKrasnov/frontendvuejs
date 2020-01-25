@@ -19,11 +19,6 @@
             return {
                 postchart: [],
                 click: [],
-                // labels:
-                // datasets: [{
-                //     backgroundColor: '#f87979',
-                //     data: [10, 10, 10 , 10, 10, 10 , 10, 10, 10, 10],
-                // }],
                 option: {
                     title: {
                         display: true,
@@ -50,7 +45,6 @@
                         let name_not_unique =localArray[j][0];
                     // значение повторяется
                     if(ik != j  && name_unique == name_not_unique){
-                        
                         localArray.splice(ik, 1);
                         ik-=1;
                         break;
