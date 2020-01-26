@@ -1,5 +1,6 @@
 <template>
 <div id="list">
+  <div class="container">
     <div class="post">
         <div class="info">
          {{post.id}}
@@ -33,6 +34,7 @@
         </ul>
         </div>
         </div>
+      </div>
     </div>
 
 </template>
@@ -51,8 +53,12 @@
     }
 </script>
 
-<style>
-
+<style scoped>
+.container {
+  padding-top: 20px;
+  width: 85%;
+  margin: 0 auto;
+}
 .post li p {
   border: none;
 }
@@ -65,11 +71,19 @@ p{
   justify-content: space-between;
   color:#2c3e50;
   font-size: 15px;
+  border: 1px solid black;
+  padding-bottom: 10px;
+  
 }
 .info{
   padding-left: 20px;
 }
 ul{
   margin: 0;
+  font-weight: bold;
+}
+ul li{
+  font-weight: 400;
+  display: block;
 }
 </style>
