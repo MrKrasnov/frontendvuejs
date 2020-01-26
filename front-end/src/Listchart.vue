@@ -1,11 +1,12 @@
 <template>
+<div class="chart">
  <chartjs-doughnut
     v-bind:labels="labels"
     v-bind:datasets="datasets"
     v-bind:option="option"
     v-show="postchart.length > 0"
  ></chartjs-doughnut>
- 
+</div>
 </template>
 
 <script>
@@ -164,5 +165,9 @@
     
 </script>
 
-<style>
+<style scoped>
+    .chart{
+        background-color: #fbfbfb;
+        margin-top: 25px;
+    }
 </style>

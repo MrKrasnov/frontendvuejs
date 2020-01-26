@@ -2,7 +2,7 @@
   <div id="app">
 
     <select v-model="selected">
-      <option disabled value="">Выберите один из вариантов</option> 
+      <option disabled value="">Выберите имя</option> 
       
         <option v-for="post in posts" :key="post.id">
           {{post.name}}
@@ -76,11 +76,24 @@ export default {
 body{
   margin: 0;
   padding: 0;
+  padding-top: 15px;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+select{
+  display: block;
+  border-radius: 5px;
+  height: 30px;
+  margin: 0 auto;
+}
+select:hover{
+  outline: none;
+}
+select:focus{
+  outline: none;
 }
 </style>

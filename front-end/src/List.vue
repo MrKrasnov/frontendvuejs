@@ -6,31 +6,31 @@
          {{post.id}}
         </div>
         <div>
-          <p>Name: {{post.name}}</p>
-           <p>Username: {{post.username}}</p>
-           <p>Email: {{post.email}}</p>
+          <p><span>Name:</span> {{post.name}}</p>
+           <p><span>Username:</span> {{post.username}}</p>
+           <p><span>Email:</span> {{post.email}}</p>
          </div>
           <div>
-         <ul>Adress:
-           <li>Street: {{post.address.street}}</li>
-           <li>Suite: {{post.address.suite}}</li>
-            <li>City: {{post.address.city}}</li>
-           <li>Zipcode: {{post.address.zipcode}}</li>
-           <li>Geo:
-                <p>lat: {{post.address.geo.lat}}</p>
-                <p>lng {{post.address.geo.lng}}</p>
+         <ul><span>Adress:</span>
+           <li><span>Street:</span> {{post.address.street}}</li>
+           <li><span>Suite:</span> {{post.address.suite}}</li>
+            <li><span>City:</span> {{post.address.city}}</li>
+           <li><span>Zipcode:</span> {{post.address.zipcode}}</li>
+           <li><span>Geo:</span>
+                <p><span>lat:</span> {{post.address.geo.lat}}</p>
+                <p><span>lng:</span> {{post.address.geo.lng}}</p>
           </li>
          </ul>
           </div>
          <div>
-          <p>Phone: {{post.phone}}</p>
-          <p>Website: {{post.website}}</p>
+          <p><span>Phone:</span> {{post.phone}}</p>
+          <p><span>Website:</span> {{post.website}}</p>
           </div>
          <div>
-          <ul> Company:
-           <li>Name: "{{post.company.name}}"</li>
-            <li>Motto: {{post.company.catchPhrase}}</li>
-            <li>Product: {{post.company.bs}}</li>
+          <ul> <span>Company:</span>
+           <li><span>Name:</span>"{{post.company.name}}"</li>
+            <li><span>Motto:</span> {{post.company.catchPhrase}}</li>
+            <li><span>Product:</span> {{post.company.bs}}</li>
         </ul>
         </div>
         </div>
@@ -73,8 +73,8 @@ p{
   font-size: 15px;
   border: 1px solid black;
   padding-bottom: 10px;
-  
 }
+
 .info{
   padding-left: 20px;
 }
@@ -85,5 +85,8 @@ ul{
 ul li{
   font-weight: 400;
   display: block;
+}
+span{
+  font-weight: bold;
 }
 </style>
